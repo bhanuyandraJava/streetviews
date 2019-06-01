@@ -34,21 +34,16 @@ export default class LocationOnMap extends Component {
         return (
             <View style={styles.container}>
                 <MapView
-                    style={{ alignSelf: 'stretch', height: 200 }}
+                    style={{ alignSelf: 'stretch', height: 500 }}
                     region={{ latitude: this.state.location.coords.latitude, longitude: this.state.location.coords.longitude, latitudeDelta: 0.0922, longitudeDelta: 0.0421 }}
                     onRegionChange={this._handleMapRegionChange}
                 >
                     <MapView.Marker
                         coordinate={this.state.location.coords}
-                        title="My Marker"
-                        description="Some description"
+                        title="Your location"
+                        description="Your location"
                     />
                 </MapView>
-
-                <Text>
-                    Location: {this.state.locationResult}
-                </Text>
-
             </View>
         );
     }
@@ -59,8 +54,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: '#ecf0f1',
+        paddingTop: Constants.statusBarHeight
     },
     paragraph: {
         margin: 24,

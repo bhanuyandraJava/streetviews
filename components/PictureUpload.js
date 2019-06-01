@@ -2,7 +2,7 @@ import React from 'react';
 import { ImageEditor, Button, Image, View } from 'react-native';
 import { ImagePicker } from 'expo';
 
-export default class StreetImagePicker extends React.Component {
+export default class PictureUpload extends React.Component {
     state = {
         image: null,
     };
@@ -17,15 +17,15 @@ export default class StreetImagePicker extends React.Component {
                     onPress={this._pickImage}
                 />
                 {image &&
-                <Image source={{ uri: image }} style={{ width: 200, height: 200, resizeMode: 'contain' }} />}
+                <Image source={{ uri: image }} style={{ width: 400, height: 400}} />}
             </View>
         );
     }
 
     _pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
-            allowsEditing: true,
-            aspect: [4, 3],
+            allowsEditing: false,
+            quality: 1
         });
 
         if (result.cancelled) {

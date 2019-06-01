@@ -1,5 +1,5 @@
-import {Body, Container, Content, Header, Text} from 'native-base';
-import {Alert, Image, StyleSheet, TouchableOpacity, View, Dimensions, ImageBackground} from 'react-native';
+import {Body, Container, Content, Header, Text, Left, Button, Icon} from 'native-base';
+import {Alert, Image, StyleSheet, TouchableOpacity, View, ImageBackground} from 'react-native';
 import React, {Component} from "react";
 
 const styles = StyleSheet.create({
@@ -38,8 +38,9 @@ const styles = StyleSheet.create({
     viewRow: {
         flex: 1,
         flexDirection: 'row',
-        marginTop: 20,
-        marginLeft: 20
+        alignItems: 'stretch',
+        marginTop: 50,
+        marginLeft: 30
     },
     viewCol2: {
         width: 120, height: 100, justifyContent: 'center'
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
 })
 
 
-class Dashboard extends Component {
+class SocialScreen extends Component {
     handleOnPress = () => {
         console.log('puff')
         Alert.alert('Inside method')
@@ -63,7 +64,15 @@ class Dashboard extends Component {
     render() {
 
         return <Container>
-            <Header><Body><Text style={styles.headerText}>Lost voices</Text></Body></Header>
+            <Header>
+                <Left>
+                    <Button
+                        transparent
+                        onPress={() => this.props.navigation.navigate('Home')}>
+                        <Icon name="home" />
+                    </Button>
+                </Left>
+                <Body><Text style={styles.headerText}>Lost voices</Text></Body></Header>
             <Content contentContainerStyle={{flex: 1}}>
 
                 <Container>
@@ -81,7 +90,7 @@ class Dashboard extends Component {
                                     width: 360,
                                     height: 100,
                                     justifyContent: 'center'
-                                }}><Text style={styles.titleText}> LOST </Text>
+                                }}><Text style={styles.titleText}> FOUND </Text>
                                     <Text style={styles.titleText}> VOICES </Text></View>
 
                             </View>
@@ -96,7 +105,7 @@ class Dashboard extends Component {
                                     width: 170, height: 100, justifyContent: 'center'
                                 }}><Image
                                     style={styles.button}
-                                    source={require('../../assets/images/Icons/Info.png')}
+                                    source={require('../../assets/images/Icons/Facebook.png')}
                                 /></View>
                                 <View
                                     style={styles.viewCol2}>
@@ -104,7 +113,7 @@ class Dashboard extends Component {
                                                       onPress={() => this.props.navigation.navigate('contribute')}>
                                         <Image
                                             style={styles.button}
-                                            source={require('../../assets/images/Icons/Contribute.png')}
+                                            source={require('../../assets/images/Icons/Twitter.png')}
                                         />
                                     </TouchableOpacity>
                                 </View>
@@ -120,7 +129,7 @@ class Dashboard extends Component {
                                                           onPress={() => this.props.navigation.navigate('search')}>
                                             <Image
                                                 style={styles.button}
-                                                source={require('../../assets/images/Icons/Investigate.png')}
+                                                source={require('../../assets/images/Icons/Instagram.png')}
                                             />
                                         </TouchableOpacity>
                                     </View>
@@ -131,39 +140,12 @@ class Dashboard extends Component {
                                                       onPress={() => this.props.navigation.navigate('contribute')}>
                                         <Image
                                             style={styles.button}
-                                            source={require('../../assets/images/Icons/ProfilePrefs.png')}
+                                            source={require('../../assets/images/Icons/Pinterest.png')}
                                         />
                                     </TouchableOpacity>
                                 </View>
                             </View>
-                            <View style={styles.viewRow}>
-                                <View style={{
-                                    width: 170,
-                                    height: 100,
-                                    justifyContent: 'center'
-                                }}>
-                                    <View style={styles.view}>
-                                        <TouchableOpacity style={styles.touchable}
-                                                          onPress={() => this.props.navigation.navigate('social')}>
 
-                                            <Image
-                                                style={styles.button}
-                                                source={require('../../assets/images/Icons/Rate.png')}
-                                            />
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-                                <View
-                                    style={styles.viewCol2}>
-                                    <TouchableOpacity style={styles.touchable}
-                                                      onPress={() => this.props.navigation.navigate('contribute')}>
-                                        <Image
-                                            style={styles.button}
-                                            source={require('../../assets/images/Icons/Settings.png')}
-                                        />
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
                         </Content>
                     </ImageBackground>
                 </Container>
@@ -173,4 +155,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default SocialScreen;
