@@ -1,8 +1,15 @@
 import React, { Component }  from "react";
 import {Body, Container, Content, Header, Text, Icon, Left, Button} from "native-base";
 import StreetImage from '../../components/StreetImage';
-import {View} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
+const styles = StyleSheet.create({
+    headerText: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: 'green'
+    }
+});
 class SearchResultsScreen extends Component
 {
     constructor(props) {
@@ -20,7 +27,7 @@ class SearchResultsScreen extends Component
                         <Icon name="home" />
                     </Button>
                 </Left>
-                <Body><Text>Lost voices</Text></Body></Header>
+                <Body><Text style={styles.headerText}>Lost voices</Text></Body></Header>
             <Content contentContainerStyle={{flex: 1}}>
                 <Container>
                     <Content>

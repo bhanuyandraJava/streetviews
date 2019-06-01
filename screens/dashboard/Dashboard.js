@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'transparent',
         justifyContent: 'center'
     },
-    image: {},
     touchable: {
         alignItems: 'center',
         justifyContent: 'center'
@@ -17,14 +16,19 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: 'center'
     },
-    titleText : {
-        fontSize: 20,
+    headerText: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: 'green'
+    },
+    titleText: {
+        fontSize: 40,
         fontWeight: 'bold',
         color: 'red'
     },
     backgroundImage: {
         flex: 1,
-        backgroundColor:'transparent',
+        backgroundColor: 'transparent',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -50,89 +54,95 @@ class Dashboard extends Component {
     render() {
 
         return <Container>
-            <Header><Body><Text style={styles.titleText}>Lost voices</Text></Body></Header>
+            <Header><Body><Text style={styles.headerText}>Lost voices</Text></Body></Header>
             <Content contentContainerStyle={{flex: 1}}>
 
                 <Container>
-                    <ImageBackground source={require('../../assets/images/Icons/LostVoicesBACKGROUND.png')} resizeMode='cover'
-                                     style={[ {width: '100%',
+                    <ImageBackground source={require('../../assets/images/Icons/LostVoicesBACKGROUND.png')}
+                                     resizeMode='cover'
+                                     style={[{
+                                         width: '100%',
                                          height: '100%',
-                                         flex: 1 }]} >
-                    <Content style={{}}>
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            alignItems: 'stretch',
-                            marginTop: 10
-                        }}>
+                                         flex: 1
+                                     }]}>
+                        <Content>
                             <View style={{
-                                width: 360,
-                                height: 100,
-                                justifyContent: 'center'
-                            }}><Text style={styles.titleText}> Lost voices </Text></View>
-
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            alignItems: 'stretch',
-                            marginTop: 20
-                        }}>
-                            <View style={{
-                                width: 170, height: 100, justifyContent: 'center'
-                            }}><Image
-                                style={styles.button}
-                                source={require('../../assets/images/Icons/Info.png')}
-                            /></View>
-                            <View
-                                style={{
-                                    width: 170, height: 100, justifyContent: 'center'
-                                }} >
-                                <TouchableOpacity style={styles.touchable} onPress={() => this.props.navigation.navigate('contribute')}>
-                                    <Image
-                                        style={styles.button}
-                                        source={require('../../assets/images/Icons/Contribute.png')}
-                                    />
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                        <View style={{
-                            flex: 1,
-                            flexDirection: 'row',
-                            alignItems: 'stretch',
-                            marginTop: 20
-                        }}>
-                            <View style={{
-                                width: 170,
-                                height: 100,
-                                justifyContent: 'center'
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'stretch',
+                                marginTop: 10
                             }}>
-                                <View style={styles.view}>
-                                    <TouchableOpacity style={styles.touchable} onPress={() => this.props.navigation.navigate('search')}>
+                                <View style={{
+                                    width: 360,
+                                    height: 100,
+                                    justifyContent: 'center'
+                                }}><Text style={styles.titleText}> LOST </Text>
+                                    <Text style={styles.titleText}> VOICES </Text></View>
 
+                            </View>
+                            <View style={{
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'stretch',
+                                marginTop: 20,
+                                marginLeft: 30
+                            }}>
+                                <View style={{
+                                    width: 170, height: 100, justifyContent: 'center'
+                                }}><Image
+                                    style={styles.button}
+                                    source={require('../../assets/images/Icons/Info.png')}
+                                /></View>
+                                <View
+                                    style={{
+                                        width: 170, height: 100, justifyContent: 'center'
+                                    }}>
+                                    <TouchableOpacity style={styles.touchable}
+                                                      onPress={() => this.props.navigation.navigate('contribute')}>
                                         <Image
                                             style={styles.button}
-                                            source={require('../../assets/images/Icons/Investigate.png')}
+                                            source={require('../../assets/images/Icons/Contribute.png')}
                                         />
                                     </TouchableOpacity>
                                 </View>
                             </View>
-                            <View
-                                style={{width: 200, height: 100,  justifyContent: 'center'}}>
-                                <TouchableOpacity style={styles.touchable} onPress={() => this.props.navigation.navigate('search')
-                                }>
+                            <View style={{
+                                flex: 1,
+                                flexDirection: 'row',
+                                alignItems: 'stretch',
+                                marginTop: 20,
+                                marginLeft: 30
+                            }}>
+                                <View style={{
+                                    width: 170,
+                                    height: 100,
+                                    justifyContent: 'center'
+                                }}>
                                     <View style={styles.view}>
+                                        <TouchableOpacity style={styles.touchable}
+                                                          onPress={() => this.props.navigation.navigate('search')}>
+
+                                            <Image
+                                                style={styles.button}
+                                                source={require('../../assets/images/Icons/Investigate.png')}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                                <View
+                                    style={{
+                                        width: 170, height: 100, justifyContent: 'center'
+                                    }}>
+                                    <TouchableOpacity style={styles.touchable}
+                                                      onPress={() => this.props.navigation.navigate('contribute')}>
                                         <Image
                                             style={styles.button}
                                             source={require('../../assets/images/Icons/ProfilePrefs.png')}
                                         />
-                                    </View>
-
-                                </TouchableOpacity>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
-                        </View>
-
-                    </Content>
+                        </Content>
                     </ImageBackground>
                 </Container>
 
