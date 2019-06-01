@@ -20,7 +20,7 @@ class SearchResultsScreen extends Component
                         <Icon name="home" />
                     </Button>
                 </Left>
-                <Body><Text>Street views</Text></Body></Header>
+                <Body><Text>Lost voices</Text></Body></Header>
             <Content contentContainerStyle={{flex: 1}}>
                 <Container>
                     <Content>

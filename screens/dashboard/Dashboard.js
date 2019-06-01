@@ -5,7 +5,8 @@ import React, {Component} from "react";
 const styles = StyleSheet.create({
     view: {
         position: 'absolute',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        justifyContent: 'center'
     },
     image: {},
     touchable: {
@@ -84,10 +85,16 @@ class Dashboard extends Component {
                                 source={require('../../assets/images/Icons/Info.png')}
                             /></View>
                             <View
-                                style={{width: 200, height: 100, justifyContent: 'center'}}><Image
-                                style={styles.button}
-                                source={require('../../assets/images/Icons/Contribute.png')}
-                            /></View>
+                                style={{
+                                    width: 170, height: 100, justifyContent: 'center'
+                                }} >
+                                <TouchableOpacity style={styles.touchable} onPress={() => this.props.navigation.navigate('contribute')}>
+                                    <Image
+                                        style={styles.button}
+                                        source={require('../../assets/images/Icons/Contribute.png')}
+                                    />
+                                </TouchableOpacity>
+                            </View>
                         </View>
                         <View style={{
                             flex: 1,
@@ -107,8 +114,6 @@ class Dashboard extends Component {
                                             style={styles.button}
                                             source={require('../../assets/images/Icons/Investigate.png')}
                                         />
-
-
                                     </TouchableOpacity>
                                 </View>
                             </View>
