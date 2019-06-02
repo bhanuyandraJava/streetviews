@@ -85,7 +85,7 @@ class ContributeOptionsScreen extends Component {
                                 <View style={{flexDirection: "row", marginTop: 30}}>
                                     <View>
                                         <TouchableOpacity style={styles.touchable}
-                                                          onPress={() => this.props.navigation.navigate('contribute')}>
+                                                          onPress={() => this.props.navigation.navigate('contributeTakePicture')}>
                                             <Image
                                                 style={styles.button}
                                                 source={require('../../assets/images/Icons/Camera.png')}

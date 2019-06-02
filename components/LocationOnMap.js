@@ -9,7 +9,7 @@ export default class LocationOnMap extends Component {
         location: {coords: { latitude: 37.78825, longitude: -122.4324}},
     };
 
-    componentDidMount() {
+    async componentDidMount() {
         this._getLocationAsync();
     }
 

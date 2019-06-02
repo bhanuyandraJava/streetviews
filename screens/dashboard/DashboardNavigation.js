@@ -8,7 +8,7 @@ import ContributeVoiceScreen from '../contribute/ContributeVoiceScreen'
 import ContributePictureScreen from '../contribute/ContributePictureScreen'
 import SocialScreen from '../social/SocialScreen'
 import SearchVoiceResultsScreen from '../search/SearchVoiceResultsScreen'
-
+import ContributeTakePictureScreen from '../contribute/ContributeTakePictureScreen'
 const DashBoardNavigation = createSwitchNavigator(
     {
         Home: Dashboard,
@@ -18,6 +18,7 @@ const DashBoardNavigation = createSwitchNavigator(
         uploadOptions: ContributeOptions,
         contributeVoice: ContributeVoiceScreen,
         contributePicture: ContributePictureScreen,
+        contributeTakePicture: ContributeTakePictureScreen,
         social: SocialScreen
     },
     {

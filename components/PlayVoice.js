@@ -14,10 +14,23 @@ export default class PlayVoice extends Component {
     };
 
     playSound = async () => {
-        await Audio.setIsEnabledAsync(true);
-        const sound = new Audio.Sound();
-        await sound.loadAsync(require('../assets/videos/GlasgowGorbalsDemolition08-05-2016.mp3'));
-        await sound.playAsync();
+        //if(this.playingStatus == 'playing') {
+        if(this.sound == null) {
+            await Audio.setIsEnabledAsync(true);
+            const sound = new Audio.Sound();
+            await sound.loadAsync(require('../assets/videos/GlasgowGorbalsDemolition08-05-2016.mp3'));
+            await sound.playAsync();
+            this.setState({
+                playingStatus: 'playing'
+            });
+            this.sound = sound;
+        } else {
+            await this._playAndPause();
+            this.setState({
+                playingStatus: 'pause'
+            });
+            this.sound = null;
+        }
     }
 
     async _playRecording() {
@@ -64,13 +77,13 @@ export default class PlayVoice extends Component {
     }
 
     _syncPauseAndPlayRecording() {
-        //if (this.sound != null) {
+        if (this.sound != null) {
             if (this.state.playingStatus == 'playing') {
                 this.sound.pauseAsync();
             } else {
-                this.sound.playSound();
+                this.sound.playAsync();
             }
-       // }
+        }
     }
 
 
@@ -89,7 +102,7 @@ export default class PlayVoice extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableOpacity style={styles.button} onPress={this._syncPauseAndPlayRecording}>
+                <TouchableOpacity style={styles.button} onPress={this.playSound}>
                     <Text style={styles.buttonText}>
                         {this.state.playingStatus}
                     </Text>
@@ -109,7 +122,7 @@ const styles = StyleSheet.create({
     },
     button: {
         width: 256,
-        height: 256/1.618,
+        height: 50,
         margin: 5,
         borderRadius: 10,
         backgroundColor: '#fff',
