@@ -18,11 +18,12 @@
     "react-dom": "16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-image-picker": "^0.28.1",
+    "react-native-track-player": "^1.1.4",
     "react-navigation": "^3.0.9"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
-    "jest-expo": "^32.0.0",
+    "jest-expo": "^33.0.0",
     "schedule": "^0.4.0"
   },
   "private": true

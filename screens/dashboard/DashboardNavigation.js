@@ -7,10 +7,13 @@ import ContributeOptions from '../contribute/ContributeOptionsScreen'
 import ContributeVoiceScreen from '../contribute/ContributeVoiceScreen'
 import ContributePictureScreen from '../contribute/ContributePictureScreen'
 import SocialScreen from '../social/SocialScreen'
+import SearchVoiceResultsScreen from '../search/SearchVoiceResultsScreen'
+
 const DashBoardNavigation = createSwitchNavigator(
     {
         Home: Dashboard,
         search: SearchResults,
+        voiceSearch: SearchVoiceResultsScreen,
         contribute: ContributeLocationScreen,
         uploadOptions: ContributeOptions,
         contributeVoice: ContributeVoiceScreen,

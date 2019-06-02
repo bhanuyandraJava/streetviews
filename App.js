@@ -3,6 +3,7 @@ import {Platform, StatusBar, StyleSheet, View} from 'react-native';
 import { AppLoading, Asset, Font, Icon} from 'expo';
 import AppNavigator from './navigation/AppNavigator';
 import {YellowBox} from 'react-native';
+
 YellowBox.ignoreWarnings(['Warning: ...']);
 
 
@@ -23,13 +24,12 @@ export default class App extends React.Component {
             Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf"),
         });
         this.setState({loading: false});
+
+
     }
 
     render() {
         console.disableYellowBox = true;
-        /*if (this.state.loading) {
-            return <Expo.AppLoading/>;
-        }*/
         if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
             return (
                 <AppLoading

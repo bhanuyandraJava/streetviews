@@ -156,7 +156,7 @@ class Dashboard extends Component {
                                 <View
                                     style={styles.viewCol2}>
                                     <TouchableOpacity style={styles.touchable}
-                                                      onPress={() => this.props.navigation.navigate('contribute')}>
+                                                      onPress={() => this.props.navigation.navigate('voiceSearch')}>
                                         <Image
                                             style={styles.button}
                                             source={require('../../assets/images/Icons/Settings.png')}
